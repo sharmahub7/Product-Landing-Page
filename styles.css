@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+:root {
+    --yellow: #f1c40f;
+    --dark: #191e24;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    color: var(--dark);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-container {
+    padding: 20px 50px;
+}
+
+.nav-container nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    gap: 20px;
+    font-weight: 600;
+    font-size: 16px;
+    color: grey;
+}
+
+nav ul li:first-child {
+    color: var(--dark);
+}
+
+nav i {
+    font-size: 26px;
+}
+
+nav ul li,
+nav i {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+    .main-container {
+        flex-direction: column;
+    }
+}
+
+.main-container {
+    width: 100%;
+    height: calc(100vh - 75px);
+    padding: 0px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-content {
+    width: 600px;
+    height: 100%;
+    /*     background: red; */
+    position: relative;
+}
+
+.left-content .yellow-bg {
+    position: absolute;
+    right: 0;
+    width: 340px;
+    height: 100%;
+    background-color: orange;
+    opacity: 0.9;
+    z-index: -1;
+}
+
+.left-content img {
+    width: 800px;
+    transform: scaleX(-1);
+    position: absolute;
+    right: -350px;
+    bottom: 30px;
+    animation: anim 1s forwards;
+}
+
+@keyframes anim {
+    100% {
+        right: -150px;
+    }
+}
+
+.right-content {
+    z-index: 2;
+    width: 600px;
+    height: 100%;
+    background: white;
+    padding: 10px 25px;
+    padding-bottom: 50px;
+    position: relative;
+}
+
+.title,
+.sub-title {
+    position: absolute;
+    font-weight: 800;
+}
+
+.title {
+    font-size: 8rem;
+    left: -215px;
+}
+
+.title span {
+    color: white;
+}
+
+.sub-title {
+    font-size: 3rem;
+    right: 80px;
+    top: 160px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: absolute;
+    bottom: 50px;
+}
+
+.para {
+    line-height: 24px;
+    color: grey;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.more {
+    font-weight: 600;
+    padding: 8px 0;
+    border-bottom: 1px solid grey;
+}
+
+.more i {
+    margin-left: 10px;
+}
+
+.bike {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .nav-container {
+        padding: 10px 30px;
+    }
+    .main-container {
+        flex-direction: column-reverse;
+        padding: 0;
+    }
+    .left-content {
+        display: none;
+    }
+    .right-content {
+        background: transparent;
+    }
+    .right-content,
+    .left-content {
+        width: 100%;
+    }
+    .yellow-bg {
+        display: none;
+    }
+    .title {
+        font-size: 3rem;
+    }
+    .sub-title {
+        font-size: 2rem;
+        margin-top: 5px;
+    }
+    .title,
+    .sub-title {
+        position: static;
+        font-weight: 800;
+        text-align: start;
+    }
+    .title span {
+        color: white;
+        background-color: orange;
+        padding-left: 20px;
+    }
+    .details {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        position: static;
+    }
+    .bike {
+        display: block;
+        width: 100%;
+    }
+    .bike img {
+        width: 100%;
+        animation: anim2 1s forwards;
+        position: relative;
+        right: 400px;
+    }
+    @keyframes anim2 {
+        100% {
+            right: 0;
+        }
+    }
+}
